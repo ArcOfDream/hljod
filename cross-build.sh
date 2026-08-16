@@ -89,7 +89,8 @@ x86_64-w64-mingw32-g++ \
 
 # Copy runtime files
 cp "$SDL3_DLL" "$OUT_DIR/"
-cp /usr/x86_64-w64-mingw32/bin/libwinpthread-1.dll "$OUT_DIR/"
+# ...turns out libwinpthread exists in lib under debian, not bin like in arch
+cp /usr/x86_64-w64-mingw32/lib/libwinpthread-1.dll "$OUT_DIR/"
 cp -r desktop/fonts "$OUT_DIR/fonts"
 
 # Cleanup
