@@ -90,7 +90,6 @@ main :: proc() {
 			voice_seq = 0
 			if len(voices) == 0 {append(&voices, make_voice())}
 			if active_voice >= i32(len(voices)) {active_voice = i32(len(voices)) - 1}
-			if len(rendered) > 0 {delete(rendered)}
 			do_render(&rendered, voices[:], fx_chain[:], rate, fx_bypass)
 		}
 		e: sdl.Event
