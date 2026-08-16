@@ -1,0 +1,13 @@
+{
+    "collections": [
+        {
+            "name": "core",
+            "path": "."
+        }
+    ],
+    "enable_document_symbols": true,
+    "enable_hover": true,
+    "enable_semantic_tokens": true,
+    "enable_inlay_hints_params": true,
+    "enable_snippets": true
+}

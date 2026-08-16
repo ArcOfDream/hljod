@@ -1,0 +1,16 @@
+{
+    "collections": [
+        {
+            "name": "kdl",
+            "path": "core/kdl"
+        }
+    ],
+    "enable_document_symbols": true,
+    "enable_hover": true,
+    "enable_semantic_tokens": true,
+    "enable_format": true,
+    "enable_references": true,
+    "enable_document_highlights": true,
+    "enable_inlay_hints_params": true,
+    "enable_snippets": true
+}

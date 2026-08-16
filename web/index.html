@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>hljod - sfx gen</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <h1>hljod</h1>
+            <span class="sub">sfx gen</span>
+            <span class="spacer"></span>
+            <span class="status" id="status">loading WASM…</span>
+        </div>
+
+        <div class="toolbar" id="toolbar">
+            <div id="tabContainer" style="display: flex; gap: 4px"></div>
+            <button id="btnAddVoice" title="Add voice" class="icn">
+                <img src="icons/tango-list-add.svg" alt="" />
+            </button>
+            <button id="btnDupVoice" title="Duplicate voice" class="icn">
+                <img src="icons/tango-edit-copy.svg" alt="" />
+            </button>
+            <button id="btnRemoveVoice" title="Remove voice" class="icn">
+                <img src="icons/tango-edit-delete.svg" alt="" />
+            </button>
+            <span class="sep"></span>
+            <label
+                >Duration
+                <input
+                    type="number"
+                    id="inputDuration"
+                    value="0.5"
+                    min="0.01"
+                    max="10"
+                    step="0.01"
+            /></label>
+            <label
+                >Offset
+                <input
+                    type="number"
+                    id="inputOffset"
+                    value="0"
+                    min="0"
+                    max="10"
+                    step="0.01"
+            /></label>
+            <span class="sep"></span>
+            <button id="btnNewProject" title="New project" class="icn">
+                <img src="icons/tango-document-save-as.svg" alt="" />
+            </button>
+            <button
+                id="btnSaveProject"
+                title="Save project (.hljod)"
+                class="icn"
+            >
+                <img src="icons/tango-document-save.svg" alt="" />
+            </button>
+            <button
+                id="btnLoadProject"
+                title="Load project (.hljod)"
+                class="icn"
+            >
+                <img src="icons/tango-document-open.svg" alt="" />
+            </button>
+            <input
+                type="file"
+                id="fileInput"
+                accept=".hljod"
+                style="display: none"
+            />
+            <span class="sep"></span>
+            <button id="btnUndo" title="Undo (Ctrl+Z)" class="icn">
+                <img src="icons/tango-edit-undo.svg" alt="" />
+            </button>
+            <button id="btnRedo" title="Redo (Ctrl+Shift+Z)" class="icn">
+                <img src="icons/tango-edit-redo.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="view-tabs">
+            <button class="view-tab active" data-view="voices">Voices</button>
+            <button class="view-tab" data-view="effects">Effects</button>
+            <span class="sep"></span>
+            <label class="bypass-wrap" id="bypassWrap">
+                <input type="checkbox" id="effectsBypass" checked /> FX
+            </label>
+        </div>
+
+        <div class="main" id="voicesPanel">
+            <div class="panel" id="oscPanel"></div>
+
+            <div class="panel">
+                <div class="panel-split">
+                    <div class="half">
+                        <div class="curve-toolbar">
+                            <label>Osc</label>
+                            <select id="curveOscSelect">
+                                <option value="0">Main</option>
+                                <option value="1">Freq (FM)</option>
+                                <option value="2">Volu (AM)</option>
+                            </select>
+                            <label>Curve</label>
+                            <select id="curveSelect">
+                                <option value="vol">Volume</option>
+                                <option value="freq">Frequency</option>
+                                <option value="wave">Waveform</option>
+                                <option value="pm">PM Depth</option>
+                            </select>
+                            <label>Min</label>
+                            <input
+                                type="number"
+                                id="curveMin"
+                                value="0"
+                                step="0.1"
+                                style="width: 48px"
+                            />
+                            <label>Max</label>
+                            <input
+                                type="number"
+                                id="curveMax"
+                                value="1"
+                                step="0.1"
+                                style="width: 48px"
+                            />
+                            <label>M</label>
+                            <button
+                                class="interp-btn active"
+                                data-interp="0"
+                                id="btnHermite"
+                            >
+                                H
+                            </button>
+                            <button
+                                class="interp-btn"
+                                data-interp="1"
+                                id="btnLinear"
+                            >
+                                L
+                            </button>
+                        </div>
+                        <div
+                            class="canvas-wrap"
+                            id="curveCanvasWrap"
+                            style="flex: 1; min-height: 100px"
+                        >
+                            <span class="canvas-overlay-label">curve</span>
+                            <canvas id="curveCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="half">
+                        <div
+                            style="
+                                display: flex;
+                                gap: 6px;
+                                margin-bottom: 6px;
+                                flex-shrink: 0;
+                            "
+                        >
+                            <button id="btnRender" style="flex: 1">
+                                Render
+                            </button>
+                            <button
+                                class="play"
+                                id="btnPlay"
+                                style="flex: 0 0 70px"
+                            >
+                                ▶ Play
+                            </button>
+                            <button
+                                id="btnDownloadWav"
+                                class="icn"
+                                style="flex: 0 0 40px"
+                                title="Download WAV"
+                            >
+                                <img
+                                    src="icons/tango-document-save-as.svg"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                        <div
+                            class="waveform-wrap"
+                            id="waveformWrap"
+                            style="flex: 1; min-height: 60px"
+                        >
+                            <canvas id="waveformCanvas"></canvas>
+                        </div>
+                        <div
+                            class="wave-info"
+                            id="waveInfo"
+                            style="flex-shrink: 0"
+                        >
+                            no render yet
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" id="effectsPanel" style="display: none">
+            <div
+                class="panel"
+                style="overflow-y: auto; border-right: none; padding: 6px"
+            >
+                <div
+                    style="
+                        font-size: 12px;
+                        font-weight: 700;
+                        color: var(--accent);
+                        margin-bottom: 6px;
+                    "
+                >
+                    Effect Chain
+                </div>
+                <div id="effectList" style="margin-bottom: 6px"></div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <select
+                        id="effectTypeSelect"
+                        style="flex: 1; min-width: 100px"
+                    >
+                        <option value="1">Delay</option>
+                        <option value="2">Overdrive</option>
+                        <option value="3">Reverb</option>
+                        <option value="4">Distortion</option>
+                        <option value="5">LowPass</option>
+                        <option value="6">Chorus</option>
+                        <option value="7">Bitcrusher</option>
+                        <option value="8">PitchShift</option>
+                    </select>
+                    <button id="btnAddEffect">+ Add</button>
+                    <button id="btnClearEffects" style="color: var(--red)">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="build/main.js"></script>
+    </body>
+</html>

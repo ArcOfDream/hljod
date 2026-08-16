@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter id="f" x="-.13524" y="-.23405" width="1.2705" height="1.4681" color-interpolation-filters="sRGB">
+<feGaussianBlur stdDeviation="1.1763393"/>
+</filter>
+<filter id="g" color-interpolation-filters="sRGB">
+<feGaussianBlur stdDeviation="0.35290179"/>
+</filter>
+<linearGradient id="e" x1="322.47" x2="318.94" y1="188.48" y2="178.75" gradientTransform="matrix(1 0 0 1.0215 -.01115 -5.8411)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#e08980" offset="0"/>
+<stop stop-color="#ecb8b3" offset="1"/>
+</linearGradient>
+<linearGradient id="d" x1="319.19" x2="316.5" y1="189.02" y2="179.52" gradientTransform="matrix(1 0 0 1.0215 0 -3.8388)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ef2929" offset="0"/>
+<stop stop-color="#f68888" offset="1"/>
+</linearGradient>
+<radialGradient id="c" cx="315.88" cy="185.14" r="6.9191" gradientTransform="matrix(2.5678 0 0 1.6135 -495.24 -111.34)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#eac9c3" offset="0"/>
+<stop stop-color="#dfaea5" stop-opacity="0" offset="1"/>
+</radialGradient>
+<radialGradient id="b" cx="314.74" cy="186.76" r="8.2884" gradientTransform="matrix(1.9049 0 0 1.7883 -284.82 -147.22)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#edd6d1" offset="0"/>
+<stop stop-color="#edd6d1" stop-opacity="0" offset="1"/>
+</radialGradient>
+<radialGradient id="a" cx="313.73" cy="184.16" r="9.4561" gradientTransform="matrix(4.1253 -.068099 .014661 .88816 -983.12 42.179)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</radialGradient>
+</defs>
+<g transform="matrix(2.0978 0 0 2.0978 -633.62 -371.24)" enable-background="new">
+<path d="m312.5 184.12-9.375 12 14.438-0.0625 6.4375-12-11.5 0.0625z" color="#000000" enable-background="new" filter="url(#f)" opacity=".55825"/>
+<path d="m313 183.94-8.7195 10.927c-0.30288 0.53466-0.48193 1.1921 0.6024 1.0856l10.022 0.10329c1.4914-0.29414 3.0266-0.48603 4.0573-1.8549l4.4657-9.9663-10.427-0.29503z" color="#000000" enable-background="new" filter="url(#g)" opacity=".52913"/>
+<path d="m312.32 178.63 9.6752-0.0297c0.61872-0.0903 1.3258 0.63203 1.3258 1.3544v4.1542l-4.4852 8.9179c-0.80681 1.9529-3.4627 2.7401-5.3234 2.8104l-7.4067-0.0268c-1.1178 0.0288-2.4268-0.60328-1.919-2.2514l1.942-6.7722 5.0753-7.7032c0.22709-0.26222 0.43111-0.54212 1.116-0.45364v9e-5z" color="#000000" enable-background="new" fill="url(#e)" stroke="url(#d)" stroke-linecap="round" stroke-width=".4767"/>
+<path d="m304.25 195.47 9.986 0.10826c1.1349-0.21139 2.2009-0.53754 3.0985-1.1445l0.75381-7.5932-11.567-0.0276-2.2711 8.657v-2e-5z" color="#000000" enable-background="new" fill="url(#c)"/>
+<path d="m317.41 194.36 1.0652-7.1206 4.4689-7.8604c0.0296-0.27049-0.1616-0.329-0.41698-0.38554l-4.2784 7.5003-4.1311-0.0519c-0.60022 0.52688-1.3536 0.84162-2.1191 0.0462l-5.3197-0.0139-0.35323 0.50004 5.6562-5e-3c0.4774 0.65669 1.367 0.49517 2.1411-0.0423l3.6085 0.0278-1.2811 8.0262c0.33128-0.19564 0.70071-0.35312 0.95964-0.62111v-2e-5 1.4e-4z" color="#000000" enable-background="new" fill="url(#b)"/>
+<path d="m322.24 179.05-10.057 0.0315c-0.0314 2e-3 -0.0629 2e-3 -0.0943 0-0.23539-0.0304-0.24008-7e-3 -0.2516 0-8e-3 5e-3 -0.0907 0.0826-0.15725 0.15725-0.0267 0.0299-0.0231 0.0172-0.0629 0.0629l-5.0005 7.6737-2.1071 7.5479c2.3e-4 0.0105 2.3e-4 0.021 0 0.0315-0.12577 0.41356-0.0882 0.52811-0.0943 0.53464 3.7675 0.48486 7.6856 0.5781 11.85 0.0315 0.4082-6e-3 0.69927-0.0262 0.84913-0.0943 0.14988-0.0682 0.27824-0.14712 0.40885-0.66044 7e-3 -0.0428 0.0173-0.0849 0.0315-0.12581l5.2835-10.473v-4.057c0-0.13223-0.0823-0.35755-0.22014-0.50321-0.13799-0.14564-0.29-0.15622-0.28307-0.15724-0.0314 2e-3 -0.0629 2e-3 -0.0943 0l-1.8e-4 -2.1e-4z" color="#000000" enable-background="new" fill="none" opacity=".33495" stroke="url(#a)" stroke-linecap="round" stroke-width=".4767"/>
+</g>
+</svg>

@@ -1,0 +1,17 @@
+# build artifacts
+hljod
+test_import
+web/hljod.wasm
+web/build/
+web/*.zip
+.cache/
+build/
+*.a
+*.dll
+*.lib
+*.o
+
+# imgui runtime state (auto-generated)
+imgui.ini
+desktop/imgui.ini
+imgui_spike

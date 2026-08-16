@@ -1,0 +1,17 @@
+# Artefacts from building and running examples
+examples/*.exe
+examples/*.bin
+examples/*.dll
+examples/imgui.ini
+
+temp/
+imgui/
+dear_bindings/
+backend_deps/
+ols.json
+
+examples/js_wgpu/web/*
+!examples/js_wgpu/web/index.html
+
+examples/js_webgl/web/*
+!examples/js_webgl/web/index.html
